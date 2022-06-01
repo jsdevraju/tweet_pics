@@ -1,13 +1,275 @@
-body {
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:wght@300;400;500&display=swap");
+
+/* Reset Css Code */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Variable */
+:root {
+  --primary-font: "Lato", sans-serif;
+  --secondary-font: "Roboto", sans-serif;
+  --primary-color: #101418;
+}
+
+/* Default Styles */
+body {
+  background: #101418;
+  color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--primary-font);
+}
+
+a,
+span,
+input,
+button,
+label {
+  font-family: var(--secondary-font);
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0px auto;
+}
+
+.header {
+  padding: 1.5em;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.left_sideNav .logo {
+  width: 50px;
+  border-radius: 10px;
+}
+
+.left_sideNav {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
+.left_sideNav h1 {
+  font-size: 1.3em;
+  display: flex;
+  gap: 0.4em;
+  align-items: center;
+  color: #209fcb;
+}
+
+.left_sideNav h1 p {
+  font-size: 0.8em;
+  color: #737b8c;
+}
+
+
+.app_btn {
+  padding: 0.7em 1.5em;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  font-weight: 400;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.btn_fill {
+  margin-right: 1em;
+  background: #333c47;
+  color: #fff;
+}
+
+.btn_main {
+  background: #1da1f2;
+  color: #fff;
+}
+
+.img_wrapper {
+  background: linear-gradient(45deg, #0d171a, #0d0f12);
+  border: 1px solid #ddd;
+  border-style: dashed;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.fileUpload_wrapper {
+  display: block;
+  width: 100%;
+}
+
+.middle_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.middle_div2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.wrapWithImg {
+  padding: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.img {
+  box-shadow: rgb(33 4 78 / 45%) 0px 22.2px 88.8px,
+    rgb(33 4 78 / 45%) 0px 49.95px 177.6px, rgb(33 4 78 / 45%) 0px 61.05px 666px;
+}
+
+.img img {
+  width: 100%;
+  object-fit: cover;
+}
+
+footer {
+  padding: 4em;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+footer .container {
+  display: flex;
+  gap: 1.5em;
+  align-items: center;
+}
+
+.range_withValue .name p {
+  color: #abb0ba;
+  font-size: 1em;
+  font-style: italic;
+}
+
+.model {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #101c24;
+  padding: 1.5em;
+  width: 415px;
+  height: 400px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  gap: 1.5em;
+  transition: 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.model.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.close {
+  position: absolute;
+  right: 30px;
+  top: 15px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.check {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #1da1f2;
+  font-size: 1em;
+}
+
+.btn_group {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.final_btn {
+  width: 100%;
+}
+
+.final_btn button {
+  width: 100%;
+}
+
+
+@media (max-width:768px) {
+  .main {
+    padding: 2em;
+  }
+
+  .block-picker {
+    width: 100% !important;
+  }
+
+  footer .container {
+    flex-direction: column;
+  }
+
+  .range_withValue {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width:520px) {
+  .left_sideNav a {
+    display: none;
+  }
+
+  .left_sideNav h1 {
+    font-size: 1em;
+  }
+
+  .app_btn {
+    padding: 0.5em 1.2em;
+  }
+
+  .navbar {
+    gap: 1.5em;
+    justify-content: center;
+  }
 }
